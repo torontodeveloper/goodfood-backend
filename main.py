@@ -1,9 +1,12 @@
 from fastapi import FastAPI
+from routers.users import login_router
 from routers.recipes import all_recipes,heat_eat,family,value
 from routers.price_plans import price_plans
 
 app = FastAPI()
 
+    
+app.include_router(login_router)
 
 
 @app.get('/all_recipes')
